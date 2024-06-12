@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson_12</title>
+</head>
+<style>
+    .secret-block {
+      width: 200px;
+      height: 100px;
+      background-color: lightgray;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+  </style>
+  <title>Secret Block</title>
+</head>
+<body>
+  <div class="secret-block" onmouseover="changeStyle(this)" onmouseleave="resetStyle(this)" onmousedown="showSecret(this)" onmouseup="hideSecret(this)">
+    У мене є секрет!
+  </div>
+
+  <script>
+    function changeStyle(element) {
+      element.innerText = "Хочеш знати який";
+      element.style.backgroundColor = "lightblue";
+    }
+
+    function resetStyle(element) {
+      element.innerText = "У мене є секрет!";
+      element.style.backgroundColor = "lightgray";
+    }
+
+    function showSecret(element) {
+      element.innerText = "А я тобі не скажу";
+      element.style.backgroundColor = "lightgreen";
+    }
+
+    function hideSecret(element) {
+      element.innerText = "Хочеш знати який";
+      element.style.backgroundColor = "lightblue";
+    }
+  </script>
+</body>
+</html>
+
+
+

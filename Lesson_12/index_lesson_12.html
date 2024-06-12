@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson_12</title>
+</head>
+<style>
+    .block {
+      width: 200px;
+      height: 200px;
+      background-color: purple;
+    }
+  </style>
+  </head>
+  <body>
+  
+  <div class="block" onmouseover="changeColor()"></div>
+  
+  <script>
+    let colors = ['red', 'yellow', 'green'];
+    let currentIndex = 0;
+  
+    function changeColor() {
+      document.querySelector('.block').style.backgroundColor = colors[currentIndex];
+      currentIndex = (currentIndex + 1)%colors.length;
+    }
+  </script>
+  
+  </body>
+  </html>
+
+
+
