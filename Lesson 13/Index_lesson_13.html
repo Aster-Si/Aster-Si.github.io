@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lesson_13</title>
+    <style>
+         body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .onclick {
+        display:display-inside ;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .colors, .images {
+        display: none;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+    }
+    .grid div {
+        width: 100px;
+        height: 100px;
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+    <h1>Interactive Page</h1>
+<div>
+    <p onclick="showColors()">Колір</p>
+    <div class="colors">
+        <div class="grid">
+            <div style="background-color: red;" onclick="changeColor('red')"></div>
+            <div style="background-color: blue;" onclick="changeColor('blue')"></div>
+            <div style="background-color: green;" onclick="changeColor('green')"></div>
+            <div style="background-color: yellow;" onclick="changeColor('yellow')"></div>
+            <div style="background-color: orange;" onclick="changeColor('orange')"></div>
+            <div style="background-color: purple;" onclick="changeColor('purple')"></div>
+            <div style="background-color: pink;" onclick="changeColor('pink')"></div>
+            <div style="background-color: brown;" onclick="changeColor('brown')"></div>
+            <div style="background-color: gray;" onclick="changeColor('gray')"></div>
+        </div>
+    </div>
+    <div>
+        <p onclick="showImages()">Зображення</p>
+        <div class="images">
+            <div class="grid">
+                <div onclick="changeImage('image1.jpg')" style="background-image: url('image1.jpg');"></div>
+                <div onclick="changeImage('image2.jpg')" style="background-image: url('image2.jpg');"></div>
+                <div onclick="changeImage('image3.jpg')" style="background-image: url('image3.jpg');"></div>
+                <div onclick="changeImage('image4.jpg')" style="background-image: url('image1.jpg');"></div>
+                <div onclick="changeImage('image5.jpg')" style="background-image: url('image2.jpg');"></div>
+                <div onclick="changeImage('image6.jpg')" style="background-image: url('image3.jpg');"></div>
+                <div onclick="changeImage('image7.jpg')" style="background-image: url('image1.jpg');"></div>
+                <div onclick="changeImage('image8.jpg')" style="background-image: url('image2.jpg');"></div>
+                <div onclick="changeImage('image9.jpg')" style="background-image: url('image3.jpg');"></div>
+                <!-- Ваші пусті клітини для зображень -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // function showColors() {
+    //     document.querySelector('.colors').style.display = 'block';
+    // }
+    
+    // function changeColor(color) {
+    //     document.body.style.backgroundColor = color;
+    // }
+
+
+    function showColors() {
+        document.querySelector('.colors').style.display = 'block';
+        document.querySelector('.images').style.display = 'none';
+    }
+    
+    function showImages() {
+        document.querySelector('.colors').style.display = 'none';
+        document.querySelector('.images').style.display = 'block';
+        document.body.style.backgroundColor = ''; // Очистити колір фону при перемиканні на зображення
+    }
+    
+    function changeColor(color) {
+        document.body.style.backgroundColor = color;
+        document.body.style.backgroundImage = '';
+    }
+    
+    function changeImage(imageUrl) {
+        document.body.style.backgroundImage = `url(${imageUrl})`;
+        document.body.style.backgroundColor = '';
+    }
+</script>
+</body>
+</html>
+
+
+
